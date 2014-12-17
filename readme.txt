@@ -3,8 +3,8 @@ Contributors: wpsitenet, kjbenk, charliepatel
 Donate link:
 Tags: comment, moderate, moderator, moderation, user role, comment moderator, user comments
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 1.0.1
+Tested up to: 4.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,8 +33,11 @@ Please visit [WPsite](http://wpsite.net) for more information or visit the direc
 
 == Changelog ==
 
+= 1.0.2 =
+* Compatible with WordPress 4.1
+
 = 1.0.1 =
-Support for WordPress version 4.0
+* Support for WordPress version 4.0
 
 = 1.0 =
-Initial release
+* Initial release
