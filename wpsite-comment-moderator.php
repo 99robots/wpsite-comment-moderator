@@ -3,7 +3,7 @@
 Plugin Name: WPsite Comment Moderator
 plugin URI:
 Description: Add a new user role, Comment Moderator, that allows a new user to only manage comments.
-version: 1.0.2
+version: 1.0.3
 Author: WPSITE.net
 Author URI: http://wpsite.net
 License: GPL2
@@ -31,7 +31,7 @@ if (!defined('WPSITE_COMMENT_MODERATOR_PLUGIN_URL'))
 /* Plugin verison */
 
 if (!defined('WPSITE_COMMENT_MODERATOR_VERSION_NUM'))
-    define('WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.0.2');
+    define('WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.0.3');
 
 
 /**
