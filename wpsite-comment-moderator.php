@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WPsite Comment Moderator
-plugin URI:
+Plugin Name: 99 Robots Comment Moderator
+plugin URI: http://99robots.com/comment-moderator
 Description: Add a new user role, Comment Moderator, that allows a new user to only manage comments.
-version: 1.1
-Author: WPSITE.net
-Author URI: http://wpsite.net
+version: 1.2
+Author: 99 Robots
+Author URI: http://99robots.com
 License: GPL2
 */
 
@@ -31,7 +31,7 @@ if (!defined('WPSITE_COMMENT_MODERATOR_PLUGIN_URL'))
 /* Plugin verison */
 
 if (!defined('WPSITE_COMMENT_MODERATOR_VERSION_NUM'))
-    define('WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.1');
+    define('WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.2');
 
 
 /**
