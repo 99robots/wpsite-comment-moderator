@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: 99 Robots Comment Moderator
-plugin URI: http://99robots.com/comment-moderator
+Plugin Name: Comment Moderator
+plugin URI: https://99robots.com/products/
 Description: Add a new user role, Comment Moderator, that allows a new user to only manage comments.
-version: 1.2
+version: 1.3.0
 Author: 99 Robots
-Author URI: http://99robots.com
+Author URI: https://99robots.com
 License: GPL2
 */
 
@@ -31,7 +31,7 @@ if (!defined('WPSITE_COMMENT_MODERATOR_PLUGIN_URL'))
 /* Plugin verison */
 
 if (!defined('WPSITE_COMMENT_MODERATOR_VERSION_NUM'))
-    define('WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.2');
+    define('WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.3.0');
 
 
 /**
