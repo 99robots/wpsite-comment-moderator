@@ -1,74 +1,89 @@
 <?php
-/*
-Plugin Name: Comment Moderator
-plugin URI: https://99robots.com/products/
-Description: Add a new user role, Comment Moderator, that allows a new user to only manage comments.
-version: 1.3.0
-Author: 99 Robots
-Author URI: https://99robots.com
-License: GPL2
-*/
+/**
+ * Plugin Name:		Comment Moderator
+ * Plugin URI:		https://99robots.com/products/
+ * Description:		Add a new user role, Comment Moderator, that allows a new user to only manage comments.
+ * Version:			1.3.2
+ * Author:			99 Robots
+ * Author URI:		https://99robots.com
+ * License:			GPL2
+ * Text Domain:		wpsite-comment-moderator
+ */
 
 /**
  * Global Definitions
  */
 
-/* Plugin Name */
+// Plugin Name
+if ( ! defined( 'WPSITE_COMMENT_MODERATOR_PLUGIN_NAME' ) ) {
+	define( 'WPSITE_COMMENT_MODERATOR_PLUGIN_NAME', trim( dirname( plugin_basename( __FILE__ ) ), '/' ) );
+}
 
-if (!defined('WPSITE_COMMENT_MODERATOR_PLUGIN_NAME'))
-    define('WPSITE_COMMENT_MODERATOR_PLUGIN_NAME', trim(dirname(plugin_basename(__FILE__)), '/'));
+// Plugin directory
+if ( ! defined( 'WPSITE_COMMENT_MODERATOR_PLUGIN_DIR' ) ) {
+	define( 'WPSITE_COMMENT_MODERATOR_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . WPSITE_COMMENT_MODERATOR_PLUGIN_NAME );
+}
 
-/* Plugin directory */
+// Plugin url
+if ( ! defined( 'WPSITE_COMMENT_MODERATOR_PLUGIN_URL' ) ) {
+	define( 'WPSITE_COMMENT_MODERATOR_PLUGIN_URL', WP_PLUGIN_URL . '/' . WPSITE_COMMENT_MODERATOR_PLUGIN_NAME );
+}
 
-if (!defined('WPSITE_COMMENT_MODERATOR_PLUGIN_DIR'))
-    define('WPSITE_COMMENT_MODERATOR_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . WPSITE_COMMENT_MODERATOR_PLUGIN_NAME);
-
-/* Plugin url */
-
-if (!defined('WPSITE_COMMENT_MODERATOR_PLUGIN_URL'))
-    define('WPSITE_COMMENT_MODERATOR_PLUGIN_URL', WP_PLUGIN_URL . '/' . WPSITE_COMMENT_MODERATOR_PLUGIN_NAME);
-
-/* Plugin verison */
-
-if (!defined('WPSITE_COMMENT_MODERATOR_VERSION_NUM'))
-    define('WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.3.0');
-
+// Plugin verison
+if ( ! defined( 'WPSITE_COMMENT_MODERATOR_VERSION_NUM' ) ) {
+	define( 'WPSITE_COMMENT_MODERATOR_VERSION_NUM', '1.3.2' );
+}
 
 /**
  * Activatation / Deactivation
  */
-
-register_activation_hook( __FILE__, array('WPsiteCommentModerator', 'register_activation'));
-
-/**
- * Hooks / Filter
- */
-
-add_action('init', array('WPsiteCommentModerator', 'load_textdomain'));
-add_action('admin_menu', array('WPsiteCommentModerator', 'wpsite_comment_moderator_remove_menu'));
+register_activation_hook( __FILE__, array( 'WPsiteCommentModerator', 'register_activation' ) );
 
 /**
- *  WPsiteCommentModerator main class
+ * WPsiteCommentModerator
  *
  * @since 1.0.0
- * @using Wordpress 3.8
  */
-
 class WPsiteCommentModerator {
 
-	/* Properties */
+	/**
+	 * The Constructor
+	 *
+	 * @since 1.3.2
+	 */
+	public function __construct() {
 
-	private static $text_domain = 'wpsite-comment-moderator';
-
-	private static $prefix = 'wpsite_comment_moderator_';
+		add_action( 'init', array( $this, 'load_textdomain' ) );
+		add_action( 'admin_menu', array( $this, 'remove_menu' ) );
+	}
 
 	/**
 	 * Load the text domain
 	 *
 	 * @since 1.0.0
 	 */
-	static function load_textdomain() {
-		load_plugin_textdomain(self::$text_domain, false, WPSITE_COMMENT_MODERATOR_PLUGIN_DIR . '/languages');
+	public function load_textdomain() {
+		load_plugin_textdomain( 'wpsite-comment-moderator', false, WPSITE_COMMENT_MODERATOR_PLUGIN_DIR . '/languages' );
+	}
+
+	/**
+	 * Remove menu according to role
+	 */
+	public function remove_menu() {
+
+		$user = wp_get_current_user();
+
+		if ( ! empty( $user ) && in_array( 'comment_moderator', (array) $user->roles ) ) {
+
+			remove_menu_page( 'edit.php' );
+			remove_menu_page( 'tools.php' );
+
+			$post_types = get_post_types( '', 'names' );
+
+			foreach ( $post_types as $post_type ) {
+				remove_menu_page( 'edit.php?post_type=' . $post_type );
+			}
+		}
 	}
 
 	/**
@@ -78,47 +93,34 @@ class WPsiteCommentModerator {
 	 */
 	static function register_activation() {
 
-		/* Check if multisite, if so then save as site option */
-
-		if (is_multisite()) {
-			add_site_option('wpsite_comment_moderator_version', WPSITE_COMMENT_MODERATOR_VERSION_NUM);
+		// Check if multisite, if so then save as site option
+		if ( is_multisite() ) {
+			add_site_option( 'wpsite_comment_moderator_version', WPSITE_COMMENT_MODERATOR_VERSION_NUM );
 		} else {
-			add_option('wpsite_comment_moderator_version', WPSITE_COMMENT_MODERATOR_VERSION_NUM);
+			add_option( 'wpsite_comment_moderator_version', WPSITE_COMMENT_MODERATOR_VERSION_NUM );
 		}
 
-		remove_role('comment_moderator');
+		remove_role( 'comment_moderator' );
 
 		add_role(
-		    'comment_moderator',
-		    __('Comment Moderator', self::$text_domain),
-		    array(
-		    	'read'					=> true,
-		        'moderate_comments' 	=> true,
-		        'edit_comment'			=> true,
-		        'edit_others_posts'		=> true,
-		        'edit_published_posts'	=> true,
-		        'edit_posts'			=> true,
-		        'edit_others_pages'		=> true,
-		        'edit_published_pages'	=> true,
-		        'edit_pages'			=> true
-		    )
+			'comment_moderator',
+			esc_html__( 'Comment Moderator', 'wpsite-comment-moderator' ),
+			array(
+				'read'					=> true,
+				'moderate_comments' 	=> true,
+				'edit_comment'			=> true,
+				'edit_others_posts'		=> true,
+				'edit_published_posts'	=> true,
+				'edit_posts'			=> true,
+				'edit_others_pages'		=> true,
+				'edit_published_pages'	=> true,
+				'edit_pages'			=> true,
+			)
 		);
 	}
-
-	static function wpsite_comment_moderator_remove_menu() {
-
-		$user = wp_get_current_user();
-
-	    if (!empty($user) && in_array('comment_moderator', (array) $user->roles)) {
-			remove_menu_page( 'edit.php' );
-			remove_menu_page( 'tools.php' );
-
-			$post_types = get_post_types('', 'names');
-
-			foreach ($post_types as $post_type) {
-				remove_menu_page("edit.php?post_type=$post_type");
-			}
-	    }
-	}
 }
-?>
+
+/**
+ * Start the plugin
+ */
+new WPsiteCommentModerator;
