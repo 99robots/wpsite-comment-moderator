@@ -1,9 +1,11 @@
 <?php
+/**
+ * Fired when the plugin is uninstalled.
+ */
 
-	/* if uninstall not called from WordPress exit */
+// If uninstall not called from WordPress, then exit.
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit;
+}
 
-	if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
-		exit ();
-
-	remove_role('comment_moderator');
-?>
+remove_role( 'comment_moderator' );
