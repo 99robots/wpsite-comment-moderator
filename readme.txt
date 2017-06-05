@@ -3,8 +3,8 @@ Contributors: 99robots, kjbenk, charliepatel
 Donate link:
 Tags: comment, moderate, moderator, moderation, user role, comment moderator, user comments
 Requires at least: 4.0
-Tested up to: 4.6.1
-Stable tag: 1.3.1
+Tested up to: 4.8.0
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ Also please check out our other [plugins](https://99robots.com/products/?utm_sou
 2. Logged in User
 
 == Changelog ==
+
+= 1.3.2 =
+* Compatible with WordPress 4.8
 
 = 1.3.1 = 2015-10-19
 * UPDATED: Banner
