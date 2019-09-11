@@ -3,7 +3,7 @@
  * Plugin Name:		Comment Moderator
  * Plugin URI:		https://99robots.com/products/
  * Description:		Add a new user role, Comment Moderator, that allows a new user to only manage comments.
- * Version:			1.3.2
+ * Version:			1.3.3
  * Author:			99 Robots
  * Author URI:		https://99robots.com
  * License:			GPL2
