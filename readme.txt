@@ -1,10 +1,10 @@
 === Comment Moderator ===
-Contributors: 99robots, kjbenk, charliepatel
+Contributors: 99robots, charliepatel
 Donate link:
 Tags: comment, moderate, moderator, moderation, user role, comment moderator, user comments
 Requires at least: 4.0
-Tested up to: 4.8.0
-Stable tag: 1.3.2
+Tested up to: 5.2.3
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ Also please check out our other [plugins](https://99robots.com/products/?utm_sou
 2. Logged in User
 
 == Changelog ==
+
+= 1.3.3 =
+* Compatible with WordPress 5.2.3
 
 = 1.3.2 =
 * Compatible with WordPress 4.8
