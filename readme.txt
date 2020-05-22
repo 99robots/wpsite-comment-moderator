@@ -36,7 +36,7 @@ Also please check out our other [plugins](https://99robots.com/products/?utm_sou
 == Changelog ==
 
 = 1.3.4 =
-* Compatible with WordPress 5.2.3
+* Compatible with WordPress 5.4.1
 
 = 1.3.3 =
 * Compatible with WordPress 5.2.3
