@@ -14,13 +14,13 @@ Add a new user role, Comment Moderator, that allows any selected user to manage 
 
 "Problem": WordPress only allows Administrators and Editors to moderate comments.
 
-"Solution": “99 Robots Comment Moderator" by https://99robots.com adds a new user "role" named "Comment Moderator" that can also manage comments. Simply install this plugin, activate it, and assign any user the "Comment Moderator" role. That user will now be able to moderate comments (all comments or only his).
+"Solution": “99 Robots Comment Moderator" by https://draftpress.com adds a new user "role" named "Comment Moderator" that can also manage comments. Simply install this plugin, activate it, and assign any user the "Comment Moderator" role. That user will now be able to moderate comments (all comments or only his).
 
 No other permissions of the user will change so rest assured this plugin will not interfere with anything else on your site.
 
-Please visit [99 Robots](https://99robots.com) for more information or visit the direct link to the [Comment Moderator plugin](https://99robots.com/comment-moderator).
+Please visit [99 Robots](https://draftpress.com) for more information or visit the direct link to the [Comment Moderator plugin](https://draftpress.com/comment-moderator).
 
-Also please check out our other [plugins](https://99robots.com/products/?utm_source=wprepo&utm_medium=comment-moderator&utm_campaign=desc) :)
+Also please check out our other [plugins](https://draftpress.com/products/?utm_source=wprepo&utm_medium=comment-moderator&utm_campaign=desc) :)
 
 == Installation ==
 
@@ -35,7 +35,7 @@ Also please check out our other [plugins](https://99robots.com/products/?utm_sou
 
 == Changelog ==
 
-= 1.3.4 =
+= 1.3.4 = 2020-27-05
 * Compatible with WordPress 5.4.1
 
 = 1.3.3 =

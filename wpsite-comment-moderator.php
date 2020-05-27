@@ -5,7 +5,7 @@
  * Description:	Add a new user role, Comment Moderator, that allows a new user to only manage comments.
  * Version: 1.3.4
  * Author: 99 Robots
- * Author URI:	https://99robots.com
+ * Author URI:	https://draftpress.com
  * License: GPL2
  * Text Domain:	wpsite-comment-moderator
  */
