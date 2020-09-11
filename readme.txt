@@ -36,7 +36,7 @@ Also please check out our other [plugins](https://draftpress.com/products/?utm_s
 == Changelog ==
 
 = 1.3.5 = 2020-27-05
-* Compatible with WordPress 5.4.1
+* Compatible with WordPress 5.5.1
 
 = 1.3.4 = 2020-27-05
 * Compatible with WordPress 5.4.1
