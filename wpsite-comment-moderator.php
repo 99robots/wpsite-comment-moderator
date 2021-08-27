@@ -3,7 +3,7 @@
  * Plugin Name:    Comment Moderator
  * Plugin URI:    https://draftpress.com/products/comment-moderator
  * Description:    Add a new user role, Comment Moderator, that allows a new user to only manage comments.
- * Version: 1.3.7
+ * Version: 1.3.8
  * Author: 99 Robots
  * Author URI:    https://draftpress.com
  * License: GPL2
