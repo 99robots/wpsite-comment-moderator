@@ -3,8 +3,8 @@ Contributors: 99robots, charliepatel, DraftPress
 Donate link:
 Tags: comment, moderate, moderator, moderation, user role, comment moderator, user comments
 Requires at least: 4.5
-Tested up to: 5.8.1
-Stable tag: 1.3.8
+Tested up to: 6.0.1
+Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,8 @@ Also please check out our other [plugins](https://draftpress.com/products/?utm_s
 2. Logged in User
 
 == Changelog ==
+= 1.3.9 = 2022-08-05
+* Compatible with WordPress 6.0.1
 
 = 1.3.8 = 2021-09-11
 * Compatible with WordPress 5.8.1
